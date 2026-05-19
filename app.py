@@ -8,6 +8,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import os
 from PIL import Image, ImageOps
+import gdown
 
 # =========================================================
 # PAGE CONFIG
@@ -140,11 +141,37 @@ def load_models():
     cnn_model = None
     ffnn_model = None
 
-    if os.path.exists("cnn_model.keras"):
-        cnn_model = tf.keras.models.load_model("cnn_model.keras")
+    # =========================
+    # Download CNN Model
+    # =========================
+    if not os.path.exists("cnn_model.keras"):
 
-    if os.path.exists("ffnn_model.keras"):
-        ffnn_model = tf.keras.models.load_model("ffnn_model.keras")
+        cnn_url = "14fvk8xbw-E1EpAPHVhrRRV1ZFwAdyEUj"
+
+        gdown.download(
+            cnn_url,
+            "cnn_model.keras",
+            quiet=False
+        )
+
+    # =========================
+    # Download FFNN Model
+    # =========================
+    if not os.path.exists("ffnn_model.keras"):
+
+        ffnn_url = "1MoXbwvEgKtmJWcNkWoy8LdGlClPReF1D"
+
+        gdown.download(
+            ffnn_url,
+            "ffnn_model.keras",
+            quiet=False
+        )
+
+    # =========================
+    # Load Models
+    # =========================
+    cnn_model = tf.keras.models.load_model("cnn_model.keras")
+    ffnn_model = tf.keras.models.load_model("ffnn_model.keras")
 
     return cnn_model, ffnn_model
 
