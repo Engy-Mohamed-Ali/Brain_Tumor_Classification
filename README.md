@@ -71,6 +71,7 @@ project/
 - Streamlit
 - Scikit-learn
 - Pillow
+- gdown
 
 ---
 
@@ -229,8 +230,7 @@ streamlit run app.py
 This project is deployed using Streamlit Community Cloud.
 
 🔗 Live Demo:  
-[Add Your Streamlit Link Here]
-
+https://brain-tumor-classification-engymohamedhanafy.streamlit.app/
 ---
 
 # 📚 Academic Integrity
