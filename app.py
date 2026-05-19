@@ -146,7 +146,7 @@ def load_models():
     # =========================
     if not os.path.exists("cnn_model.keras"):
 
-        cnn_url = "14fvk8xbw-E1EpAPHVhrRRV1ZFwAdyEUj"
+        cnn_url = "https://drive.google.com/uc?id=14fvk8xbw-E1EpAPHVhrRRV1ZFwAdyEUj"
 
         gdown.download(
             cnn_url,
@@ -159,7 +159,7 @@ def load_models():
     # =========================
     if not os.path.exists("ffnn_model.keras"):
 
-        ffnn_url = "1MoXbwvEgKtmJWcNkWoy8LdGlClPReF1D"
+        ffnn_url = "https://drive.google.com/uc?id=1MoXbwvEgKtmJWcNkWoy8LdGlClPReF1D"
 
         gdown.download(
             ffnn_url,
